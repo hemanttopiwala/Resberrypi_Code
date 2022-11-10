@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>GPIO Control</title>
+
+        <link rel="stylesheet" href="index.css" type="text/css">
+    </head>
+
+
+<body>
+
+    <div class="main">
+
+        <div>
+
+       
+
+    
+            <h2>Automated Parcel delivery terminal</h2>
+
+        </div>
+
+        <div>
+
+       
+            <button type="button" id="state" onclick="LEDOn()" style="background-color:green;">ON</button>
+            <button type="button" id="state" onclick="LEDOff()" style="background-color:red;">OFF</button>
+
+        </div>
+
+        <div>
+
+       
+
+            <button type="button" id="state" onclick="LEDOn()" style="background-color:green;">ON</button>
+            <button type="button" id="state" onclick="LEDOff()" style="background-color:red;">OFF</button>
+
+         </div>
+
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js"></script>
+    <script>
+        var socket = io.connect(); //load socket.io-client and connect to the host
+        function LEDOn() {
+            socket.emit("state", 1); //send button state to server
+        }
+
+        function LEDOff() {
+            socket.emit("state", 0); //send button state to server
+        }
+    </script>
+
+</html>
+</body>
+
+</html>
